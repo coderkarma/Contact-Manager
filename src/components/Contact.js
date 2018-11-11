@@ -6,6 +6,11 @@ import PropTypes from 'prop-types'
    state = {
      showContactInfo: false
    };
+
+   onDeleteClick = () => {
+     this.props.deleteClickHandler();
+    
+   }
   
   render() {
     // destructuring and pull contacts from contact
@@ -17,8 +22,13 @@ import PropTypes from 'prop-types'
         <i 
           onClick={() => {this.setState({showContactInfo: !this.state.showContactInfo})}
           }
-          className="fas fa-sort-down">
-        </i>
+          className="fas fa-sort-down" 
+          style={{cursor: 'pointer'}}
+
+        />
+        <i className="fas fa-times" style={{cursor: "pointer", float:"right", color: 'red'}}
+         onClick={this.onDeleteClick}
+        />
 
         </h4>
         {showContactInfo ? (
@@ -31,8 +41,8 @@ import PropTypes from 'prop-types'
     );
   }
 }
-Contact.PropTypes = {
- contact:PropTypes.object.isRequired
- 
+Contact.propTypes = {
+ contact: PropTypes.object.isRequired,
+ deleteClickHandler: PropTypes.func.isRequired
 };
-export default Contact
+export default Contact;

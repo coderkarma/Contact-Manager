@@ -22,7 +22,7 @@ Header.defaultProps = {
     branding: "My App"
 };
 
-Header.prototype = {
+Header.propTypes = {
     branding: PropTypes.string.isRequired
 }
 
