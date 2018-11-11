@@ -31,7 +31,7 @@ import Contact from './Contact'
     const { contacts } = this.state;
 
     return (
-      <div>
+      <React.Fragment>
         {contacts.map(contact => 
            <Contact
             key={contact.id}
@@ -39,7 +39,7 @@ import Contact from './Contact'
             
             />
         )}
-      </div>
+      </React.Fragment>
     )
   }
 }
